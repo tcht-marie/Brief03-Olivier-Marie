@@ -41,7 +41,8 @@ header {
   height: auto;
 }
 
-.film-card h2, .film-card p {
+.film-card h2,
+.film-card p {
   padding: 0 15px;
 }
 
@@ -101,22 +102,26 @@ header {
 
 @media (min-width: 600px) {
   .film-card {
-      width: calc(33.333% - 20px);
+    width: calc(33.333% - 20px);
   }
 
   .film-details img {
-      max-height: 400px; /* limite la hauteur de l'image pour éviter qu'elle soit trop grande */
-      object-fit: cover; /* assure que l'image couvre la zone définie sans perdre son ratio d'aspect */
-      margin-right: 20px; /* ajoute un peu d'espace entre l'image et le texte à côté */
+    max-height: 400px; /* limite la hauteur de l'image pour éviter qu'elle soit trop grande */
+    object-fit: cover; /* assure que l'image couvre la zone définie sans perdre son ratio d'aspect */
+    margin-right: 20px; /* ajoute un peu d'espace entre l'image et le texte à côté */
   }
 
   .film-details > * {
-      flex: 1; /* donne une flexibilité égale aux éléments enfants direct de .film-details, permettant un arrangement plus équilibré */
+    flex: 1; /* donne une flexibilité égale aux éléments enfants direct de .film-details, permettant un arrangement plus équilibré */
   }
 }
 
 @media (min-width: 900px) {
   .film-card {
-      width: calc(25% - 20px);
+    width: calc(25% - 20px);
   }
+}
+
+h2 {
+  color: red;
 }
