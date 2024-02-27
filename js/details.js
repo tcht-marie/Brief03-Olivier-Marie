@@ -30,24 +30,28 @@ window.addEventListener("load", () => {
 
 
 function displayMovie (data) {
-    let idFilm = data;
-    console.log('id film : ', idFilm);
+    let infoFilm = data;
+    console.log('info film : ', infoFilm);
 
     let mainDetails = document.querySelector('.movieDescription');
 
     let movieTitle = document.createElement('h2');
-    movieTitle.innerHTML = idFilm.title;
+    movieTitle.innerHTML = infoFilm.title;
+
+    let movieImage = document.createElement('img');
+    movieImage.src = "https://image.tmdb.org/t/p/w500" + infoFilm.poster_path;
+    console.log(movieImage);
 
     let detailsMovie = document.createElement('p');
-    detailsMovie.innerHTML = idFilm.overview;
+    detailsMovie.innerHTML = infoFilm.overview;
 
     let distribution = document.createElement('h3');
     distribution.textContent = 'Genre';
 
-    mainDetails.append(movieTitle, detailsMovie, distribution);
+    mainDetails.append(movieTitle, movieImage ,detailsMovie, distribution);
     
-    for (let index = 0; index < idFilm.genres.length; index++) {
-        const element = idFilm.genres[index].name;
+    for (let index = 0; index < infoFilm.genres.length; index++) {
+        const element = infoFilm.genres[index].name;
         let genre = document.createElement('p');
         genre.innerHTML = element;
         mainDetails.append(genre);
