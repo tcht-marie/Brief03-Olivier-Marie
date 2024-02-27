@@ -13,14 +13,13 @@ window.addEventListener("load", () => {
     let id = url.match(regexId);
     let idFilm = id[1];
 
-    fetch(`https://api.themoviedb.org/3/movie/${idFilm}?language=en-US`, options)
+    fetch(`https://api.themoviedb.org/3/movie/${idFilm}?language=fr-FR`, options)
         .then(response => response.json())
         .then((data) => {
             displayMovie(data);
         })
         .catch(err => console.error(err));
 })
-
 
 function displayMovie (data) {
     let idFilm = data;
@@ -31,23 +30,31 @@ function displayMovie (data) {
     let movieTitle = document.createElement('h2');
     movieTitle.innerHTML = idFilm.title;
 
-    let movieImage = document.createElement('img');
-    movieImage.src = "https://image.tmdb.org/t/p/w500" + idFilm.poster_path;
-    console.log(movieImage);
-
     let detailsMovie = document.createElement('p');
     detailsMovie.innerHTML = idFilm.overview;
 
-    let distribution = document.createElement('h3');
-    distribution.textContent = 'Genre';
+    mainDetails.append(movieTitle, detailsMovie);
 
-    mainDetails.append(movieTitle, movieImage ,detailsMovie, distribution);
-    
-    for (let index = 0; index < idFilm.genres.length; index++) {
-        const element = idFilm.genres[index].name;
-        let genre = document.createElement('p');
-        genre.innerHTML = element;
-        mainDetails.append(genre);
+    if (idFilm.poster_path === null) {
+        console.error("Aucuns posters dispos");
+    } else {
+        let movieImage = document.createElement('img');
+        movieImage.src = "https://image.tmdb.org/t/p/w500" + idFilm.poster_path;
+        mainDetails.appendChild(movieImage);
+    }
+
+    if (idFilm.genres.length === 0) {
+        console.error("Aucuns genres trouvés");
+    } else {
+        let distribution = document.createElement('p');
+        distribution.textContent = 'Genre';
+        mainDetails.appendChild(distribution);
+        for (let index = 0; index < idFilm.genres.length; index++) {
+            const element = idFilm.genres[index].name;
+            let genre = document.createElement('p');
+            genre.innerHTML = element;
+            distribution.append(genre);
+        }
     }
 
     let releaseDate = document.createElement('p');
