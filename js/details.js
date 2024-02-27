@@ -26,14 +26,15 @@ function displayMovie (data) {
     let idFilm = data;
     console.log('info film : ', idFilm);
 
+    let title = document.querySelector('#movieTitle');
     let mainDetails = document.querySelector('.movieDescription');
 
     let movieTitle = document.createElement('h2');
     movieTitle.innerHTML = idFilm.title;
+    title.appendChild(movieTitle);
 
     let movieImage = document.createElement('img');
     movieImage.src = "https://image.tmdb.org/t/p/w500" + idFilm.poster_path;
-    console.log(movieImage);
 
     let detailsMovie = document.createElement('p');
     detailsMovie.innerHTML = idFilm.overview;
@@ -41,7 +42,7 @@ function displayMovie (data) {
     let distribution = document.createElement('h3');
     distribution.textContent = 'Genre';
 
-    mainDetails.append(movieTitle, movieImage ,detailsMovie, distribution);
+    mainDetails.append(movieImage ,detailsMovie, distribution);
     
     for (let index = 0; index < idFilm.genres.length; index++) {
         const element = idFilm.genres[index].name;
