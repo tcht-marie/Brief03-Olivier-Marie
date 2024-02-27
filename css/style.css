@@ -32,19 +32,30 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2em;
-  padding: 1em;
-  border: 0.7em solid lightgray;
+  width: 18%;
+  padding: 1em 0;
+  border: 0.2em solid lightgray;
   border-radius: 2em;
 }
 
+.movieTitle {
+  height: 2.7em;
+  font-size: 1.3em;
+  text-align: center;
+}
+
 .movieImg {
-  width: 500px;
-  height: 250px;
+  max-width: 90%;
+  height: 25em;
   padding: 0.5em 0;
+  border-radius: 2em;
 }
 
 .movie p {
-  padding: 0.5em 0;
+  padding: 0.2em 0;
 }
 
+.lienDetails {
+  text-decoration: none;
+  color: black;
+}
