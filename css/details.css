@@ -2,11 +2,6 @@
   padding: 20px;
 }
 
-.film-details img {
-  width: 100%;
-  height: auto;
-}
-
 .movieDescription {
   display: flex;
   flex-direction: column;
