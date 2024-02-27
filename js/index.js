@@ -23,13 +23,13 @@ window.addEventListener("load", () => {
                 let duree = " ATTENTION ";
                 let genre = element.genre_ids[0];
 
-                console.log(" NOUVEAU FILM ");
-                console.log(titre);
-                console.log(affiche);
-                console.log(dateSortie);
-                console.log(duree);
-                console.log(genre);
-                console.log(" ----------------- ");
+                // console.log(" NOUVEAU FILM ");
+                // console.log(titre);
+                // console.log(affiche);
+                // console.log(dateSortie);
+                // console.log(duree);
+                // console.log(genre);
+                // console.log(" ----------------- ");
 
 
 
