@@ -9,9 +9,6 @@ window.addEventListener("load", () => {
     };
 
 
-
-
-
     //fonction qui transforme la date en YYYY-MM-DD
     function formatDate(date = new Date()) {
         const year = date.toLocaleString('default', { year: 'numeric' });
