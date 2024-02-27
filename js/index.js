@@ -14,7 +14,6 @@ window.addEventListener("load", () => {
             let listeFilm = data.results;
 
 
-
             listeFilm.forEach(element => {
                 //  le titre du film, l'affiche, la date de sortie, la durée et le genre.
                 let titre = element.original_title;

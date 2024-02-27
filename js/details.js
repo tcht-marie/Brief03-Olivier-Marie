@@ -8,6 +8,9 @@ window.addEventListener("load", () => {
         }
     };
 
+    let url = window.location.href;
+    console.log('fetch url : ', url);
+
     fetch('https://api.themoviedb.org/3/movie/969492?language=en-US', options)
         .then(response => response.json())
         .then((data) => {
@@ -15,6 +18,7 @@ window.addEventListener("load", () => {
         })
         .catch(err => console.error(err));
 })
+
 
 function displayMovie (data) {
     let idFilm = data;
