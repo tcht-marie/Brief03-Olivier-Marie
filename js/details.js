@@ -8,10 +8,17 @@ window.addEventListener("load", () => {
         }
     };
 
+    // let url = window.location.href;
+    // let urlParams = new URLSearchParams(window.location.search);
+    // let name = urlParams.get('?');
+    // console.log('fetch url : ', url);
+    // console.log('fetch url param : ', urlParams);
+
     let url = window.location.href;
     let regexId = /\?(.*)/;
     let id = url.match(regexId);
     let idFilm = id[1];
+    // console.warn(idFilm);
 
     fetch(`https://api.themoviedb.org/3/movie/${idFilm}?language=fr-FR`, options)
         .then(response => response.json())
@@ -23,7 +30,7 @@ window.addEventListener("load", () => {
 
 function displayMovie (data) {
     let idFilm = data;
-    console.log('info film : ', idFilm);
+    console.log('id film : ', idFilm);
 
     let mainDetails = document.querySelector('.movieDescription');
 
