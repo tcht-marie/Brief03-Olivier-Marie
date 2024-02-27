@@ -18,6 +18,15 @@
   color: black;
 }
 
+.distribution {
+  display: flex;
+  align-items: center;
+}
+
+.distribution p {
+  padding-left: 0.3em;
+}
+
 .film-recommendations {
   margin-top: 20px;
 }

@@ -33,7 +33,6 @@ window.addEventListener("load", () => {
             let listeFilm = data.results;
 
 
-
             let mainList = document.querySelector("main");
 
 
@@ -42,7 +41,7 @@ window.addEventListener("load", () => {
                 let titre = element.original_title;
                 let affiche = "https://image.tmdb.org/t/p/w500" + element.poster_path;
                 let dateSortie = element.release_date;
-                let duree = " ATTENTION ";
+                let duree = "";
                 // let genre = element.genre_ids[0];
                 let genre = element.genre_ids;
                 let id = element.id;

@@ -8,12 +8,6 @@ window.addEventListener("load", () => {
         }
     };
 
-    // let url = window.location.href;
-    // let urlParams = new URLSearchParams(window.location.search);
-    // let name = urlParams.get('?');
-    // console.log('fetch url : ', url);
-    // console.log('fetch url param : ', urlParams);
-
     let url = window.location.href;
     let regexId = /\?(.*)/;
     let id = url.match(regexId);
@@ -56,7 +50,8 @@ function displayMovie (data) {
         console.error("Aucuns genres trouvés");
     } else {
         let distribution = document.createElement('p');
-        distribution.textContent = 'Genre';
+        distribution.textContent = 'Genre : ';
+        distribution.classList.add('distribution');
         mainDetails.appendChild(distribution);
         for (let index = 0; index < idFilm.genres.length; index++) {
             const element = idFilm.genres[index].name;
@@ -75,9 +70,14 @@ function displayMovie (data) {
     let budget = document.createElement('p');
     budget.innerHTML = "Budget du film : " + data.budget + " $";
 
-    let homePage = document.createElement('a');
-    homePage.href = data.homepage;
-    homePage.innerHTML = homePage.href;
-
-    mainDetails.append(releaseDate, duration, budget, homePage);
+    mainDetails.append(releaseDate, duration, budget);
+    
+    if (idFilm.homepage === "") {
+        console.warn("aucun site lié à ce film");
+    } else {
+        let homePage = document.createElement('a');
+        homePage.href = data.homepage;
+        homePage.innerHTML = homePage.href;
+        mainDetails.appendChild(homePage);
+    }
 }
