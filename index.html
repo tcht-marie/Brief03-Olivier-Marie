@@ -16,15 +16,37 @@
     <header>
       <h1>Prochaines Sorties Cinéma</h1>
     </header>
-    <main class="film-grid">
-      <!-- <div class="movie">
-        <h2 class="movieTitle">Nom du film</h2>
-        <img src="img/image1.jpg" alt="affiche film" class="movieImg" />
-        <p class="movieReleaseDate">Date de sortie : JJ/MM/AAAA</p>
-        <p class="movieLength">Durée : 00h00</p>
-        <p class="movieGenre">Genre : Love Story</p>
-      </div> -->
-    </main>
+    <section id="filtres">
+      <div class="Filtre">
+        <div>
+          <h2>Filtres :</h2>
+          <div>
+            <!-- //////////////// -->
+            <fieldset>
+              <legend>Langue originale:</legend>
+              <div>
+                <input type="checkbox" id="frLangue" name="frLangue" checked />
+                <label for="frLangue">Français</label>
+              </div>
+
+              <div>
+                <input type="checkbox" id="enLangue" name="enLangue" />
+                <label for="enLangue">Anglais</label>
+              </div>
+
+              <div>
+                <input type="checkbox" id="autreLangue" name="autreLangue" />
+                <label for="autreLangue">Autre</label>
+              </div>
+            </fieldset>
+
+            <!-- //////////////// -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="film-grid"></main>
   </body>
   <script src="js/index.js"></script>
 </html>
