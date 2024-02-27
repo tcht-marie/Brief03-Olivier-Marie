@@ -35,7 +35,10 @@ window.addEventListener("load", () => {
         .then((data) => {
             let listeFilm = data.results;
 
+
+
             let mainList = document.querySelector("main");
+
 
             listeFilm.forEach(element => {
                 //  le titre du film, l'affiche, la date de sortie, la durée et le genre.

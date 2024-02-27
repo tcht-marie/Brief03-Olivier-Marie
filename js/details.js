@@ -8,13 +8,26 @@ window.addEventListener("load", () => {
         }
     };
 
-    fetch('https://api.themoviedb.org/3/movie/969492?language=en-US', options)
+    // let url = window.location.href;
+    // let urlParams = new URLSearchParams(window.location.search);
+    // let name = urlParams.get('?');
+    // console.log('fetch url : ', url);
+    // console.log('fetch url param : ', urlParams);
+
+    let url = window.location.href;
+    let regexId = /\?(.*)/;
+    let id = url.match(regexId);
+    let idFilm = id[1];
+    console.warn(idFilm);
+
+    fetch(`https://api.themoviedb.org/3/movie/${idFilm}?language=en-US`, options)
         .then(response => response.json())
         .then((data) => {
             displayMovie(data);
         })
         .catch(err => console.error(err));
 })
+
 
 function displayMovie (data) {
     let idFilm = data;
