@@ -84,9 +84,6 @@ window.addEventListener("load", () => {
                 lien.innerHTML = "Plus de détails";
                 lien.href = "details.html?" + id;
 
-
-
-
                 // console.log(" NOUVEAU FILM ");
                 // console.log(titre);
                 // console.log(affiche);
