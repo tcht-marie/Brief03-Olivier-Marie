@@ -32,4 +32,4 @@ setTimeout(() => {
     this.classList.toggle("close");
     overlay.classList.toggle("overlay");
   });
-}, 2000);
+}, 1000);
