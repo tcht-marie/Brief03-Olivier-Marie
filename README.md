@@ -9,9 +9,10 @@ GCR Cinéma a besoin d'une nouvelle page web pour afficher les films à l'affich
 - La page web doit être responsive et accessible sur tous les appareils.
 ## Fonctionnalités
 - Visualiser les prochaines sorties avec une carte contenant un visuel de celui-ci.
+  ![exemple de carte de film](./img/exemple_carte_film.PNG)
+- Possibilité de filtrer les films.
 - Lire le descriptif d'un film.
 - Voir les films associés sur la page d'un descriptif de film.
-- Possibilité de filtrer les films.
 ## Critères de performance
 - La page web doit être fluide et réactive sur tous les appareils.
 - Le code doit être propre, bien commenté et documenté.
