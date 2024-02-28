@@ -55,7 +55,26 @@ header {
   padding: 0.2em 0;
 }
 
+
+legend {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.filtre {
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+input {
+  padding: 10px;
+}
+
 .lienDetails {
   text-decoration: none;
   color: black;
 }
+
