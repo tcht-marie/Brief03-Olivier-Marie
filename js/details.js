@@ -25,17 +25,16 @@ window.addEventListener("load", () => {
 function displayMovie(data) {
   let idFilm = data;
 
-  let title = document.querySelector("#header");
+  //   let title = document.querySelector("#header");
   let mainDetails = document.querySelector(".movieDescription");
 
   let movieTitle = document.createElement("h1");
   movieTitle.innerHTML = idFilm.title;
-  title.appendChild(movieTitle);
 
   let detailsMovie = document.createElement("p");
   detailsMovie.innerHTML = idFilm.overview;
 
-  mainDetails.append(detailsMovie);
+  mainDetails.append(movieTitle, detailsMovie);
 
   if (idFilm.poster_path === null) {
     console.error("Aucuns posters dispos");

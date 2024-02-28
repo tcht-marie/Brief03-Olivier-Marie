@@ -13,11 +13,19 @@ body {
   font-family: Arial, sans-serif;
 }
 
+body h1 {
+  text-align: center;
+}
+
 header {
-  background-color: #333;
+  background-color: #8e3b46;
   color: #fff;
   padding: 20px;
   text-align: center;
+}
+
+main {
+  background-color: #f1f7ed;
 }
 
 .film-grid {
