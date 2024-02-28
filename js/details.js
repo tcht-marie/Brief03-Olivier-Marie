@@ -18,6 +18,7 @@ window.addEventListener("load", () => {
         .then(response => response.json())
         .then((data) => {
             displayMovie(data);
+            displayReco(data);
         })
         .catch(err => console.error(err));
 })
@@ -79,5 +80,28 @@ function displayMovie (data) {
         homePage.href = data.homepage;
         homePage.innerHTML = homePage.href;
         mainDetails.appendChild(homePage);
+    }
+}
+
+function displayReco(data) {
+    let idFilm = data;
+
+    let btnPrev = document.querySelector('.prev');
+    let slider = document.querySelector('.slider');
+    let btnNext = document.querySelector('.next');
+
+    for (let index = 0; index < idFilm.genres.length; index++) {
+        const element = idFilm.genres[index].name;
+
+        let divReco = document.createElement('div');
+        let genreReco = document.createElement('h4');
+        genreReco.innerHTML = element;
+        divReco.classList.add('recommendation-card');
+
+        let imageReco = document.createElement('img');
+        imageReco.src = "https://image.tmdb.org/t/p/w500" + idFilm.poster_path;
+
+        divReco.append(genreReco, imageReco);
+        slider.appendChild(divReco);
     }
 }

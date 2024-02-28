@@ -31,11 +31,28 @@
   margin-top: 20px;
 }
 
+.film-recommendations h2 {
+  display: flex;
+  justify-content: center;
+  color: white;
+  background: black;
+}
+
 .scroll-container {
   display: flex;
   overflow-x: auto;
   gap: 20px;
   padding: 10px 0;
+}
+
+.buttonSlider {
+  background-color: white;
+  border: none;
+  font-size: 1.3em;
+}
+
+.buttonSlider:hover {
+  background-color: lightgray;
 }
 
 .recommendation-card {
@@ -92,11 +109,16 @@
   
   .scroll-container {
     display: flex;
+    align-items: center;
     overflow-x: auto;
     gap: 20px;
     padding: 10px 0;
   }
   
+  .slider {
+    display: flex;
+  }
+
   .recommendation-card {
     flex: 0 0 auto; /* Les éléments ne grandissent pas, ne rétrécissent pas, mais sont basés sur leur largeur */
     width: 160px; /* Définissez une largeur fixe pour chaque carte de recommandation */
@@ -111,7 +133,7 @@
     display: block; /* Élimine l'espace sous les images */
   }
   
-  .recommendation-card h3 {
+  .recommendation-card h4 {
     font-size: 1rem;
     padding: 5px;
     text-align: center;
