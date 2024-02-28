@@ -25,8 +25,10 @@ header {
   justify-content: center;
 }
 
+#title,
+#filtres,
 main {
-  background-color: #f1f7ed;
+  background-color: #f9f8f1;
 }
 
 .film-grid {
@@ -55,8 +57,9 @@ main {
   align-items: center;
   width: 300px;
   padding: 1em 0;
-  border: 0.2em solid lightgray;
+  border: 0.2em solid #8e3b46;
   border-radius: 2em;
+  background: white;
 }
 
 .movieTitle {
@@ -80,10 +83,11 @@ legend {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  border: 0.2em solid lightgray;
+  border: 0.2em solid #8e3b46;
   border-radius: 2em;
   padding: 5px;
   margin-bottom: 10px;
+  background: white;
 }
 
 .filtre {
@@ -107,9 +111,10 @@ input {
 }
 
 .Filtre button {
-  border: 0.2em solid lightgray;
+  border: 0.2em solid #8e3b46;
   border-radius: 2em;
   padding: 5px;
+  background: white;
 }
 
 .filtre input {
@@ -117,5 +122,5 @@ input {
 }
 
 #filtres {
-  margin: 20px;
+  padding: 20px;
 }
