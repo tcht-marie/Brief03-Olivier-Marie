@@ -47,11 +47,6 @@ function chargementFilm(params) {
         p1.classList.add("movieReleaseDate");
         p1.innerHTML = dateSortie;
 
-        let p2 = document.createElement("p");
-        cardFilm.appendChild(p2);
-        p2.classList.add("movieLength");
-        p2.innerHTML = duree;
-
         let p3 = document.createElement("p");
         cardFilm.appendChild(p3);
         p3.classList.add("movieGenre");

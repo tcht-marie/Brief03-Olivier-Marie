@@ -12,7 +12,6 @@ window.addEventListener("load", () => {
   let regexId = /\?(.*)/;
   let id = url.match(regexId);
   let idFilm = id[1];
-  // console.warn(idFilm);
 
   fetch(`https://api.themoviedb.org/3/movie/${idFilm}?language=fr-FR`, options)
     .then((response) => response.json())
@@ -25,7 +24,6 @@ window.addEventListener("load", () => {
 
 function displayMovie(data) {
   let idFilm = data;
-  console.log("id film : ", idFilm);
 
   let title = document.querySelector("#movieTitle");
   let mainDetails = document.querySelector(".movieDescription");
@@ -92,11 +90,16 @@ function displayReco(idOrigin) {
   )
     .then((response) => response.json())
     .then((data) => {
-      let recommendations = data.results;
+      let recommendations = data.results.slice(0, 5);
 
       let slider = document.querySelector(".slider");
 
-      for (let index = 0; index < 5; index++) {
+      if (recommendations.length === 0) {
+        const recoTitle = document.querySelector(".film-recommendations > h2");
+        recoTitle.style.display = "none";
+      }
+
+      for (let index = 0; index < recommendations.length; index++) {
         const element = recommendations[index];
 
         let divReco = document.createElement("div");
