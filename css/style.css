@@ -55,7 +55,6 @@ header {
   padding: 0.2em 0;
 }
 
-
 legend {
   display: flex;
   flex-direction: row;
@@ -77,4 +76,3 @@ input {
   text-decoration: none;
   color: black;
 }
-
