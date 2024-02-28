@@ -23,9 +23,21 @@ header {
 .film-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 20px;
   padding: 20px;
+  justify-content: space-between;
+}
+
+@media (max-width: 677px) {
+  .film-grid {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1000px) {
+  .film-grid {
+    justify-content: space-around;
+  }
 }
 
 .movie {
