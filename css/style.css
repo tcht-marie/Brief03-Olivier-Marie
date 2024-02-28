@@ -59,10 +59,14 @@ legend {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  border: 0.2em solid lightgray;
+  border-radius: 2em;
+  padding: 5px;
+  margin-bottom: 10px;
 }
 
 .filtre {
-  padding: 15px;
+  padding: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -75,4 +79,22 @@ input {
 .lienDetails {
   text-decoration: none;
   color: black;
+}
+
+.Filtre {
+  text-align: center;
+}
+
+.Filtre button {
+  border: 0.2em solid lightgray;
+  border-radius: 2em;
+  padding: 5px;
+}
+
+.filtre input {
+  margin-right: 5px;
+}
+
+#filtres {
+  margin: 20px;
 }
