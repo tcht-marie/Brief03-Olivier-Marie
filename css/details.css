@@ -1,30 +1,104 @@
-.film-card {
-    width: calc(50% - 20px);
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    overflow: hidden;
-  }
-  
-  .film-card a {
-    text-decoration: none;
-    color: black;
-  }
-  
-  .film-card img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .film-card h2,
-  .film-card p {
-    padding: 0 15px;
+.film-details {
+  padding: 20px;
+}
+
+.movieDescription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5em 0;
+}
+
+.movieDescription p {
+  padding: 0.4em 0;
+}
+
+.movieDescription a {
+  text-decoration: none;
+  color: black;
+}
+
+.distribution {
+  display: flex;
+  align-items: center;
+}
+
+.distribution p {
+  padding-left: 0.3em;
+}
+
+.film-recommendations {
+  margin-top: 20px;
+}
+
+.film-recommendations h2 {
+  display: flex;
+  justify-content: center;
+  color: white;
+  background: black;
+}
+
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.buttonSlider {
+  background-color: white;
+  border: none;
+  font-size: 1.3em;
+}
+
+.buttonSlider:hover {
+  background-color: lightgray;
+}
+
+.recommendation-card {
+  flex: 0 0 auto; /* Les éléments ne grandissent pas, ne rétrécissent pas, mais sont basés sur leur largeur */
+  width: 160px; /* Définissez une largeur fixe pour chaque carte de recommandation */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.recommendation-card img {
+  width: 100%;
+  height: auto;
+  display: block; /* Élimine l'espace sous les images */
+}
+
+.recommendation-card h3 {
+  font-size: 1rem;
+  padding: 5px;
+  text-align: center;
+}
+
+/* Ajoutez des styles pour gérer les barres de défilement sur différents navigateurs */
+.scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: #efefef;
+}
+
+@media (min-width: 600px) {
+  .film-card {
+    width: calc(33.333% - 20px);
   }
   
   .film-details {
     padding: 20px;
   }
   
-  .film-details img {
+  #imgCinema {
     width: 100%;
     height: auto;
   }
@@ -35,11 +109,16 @@
   
   .scroll-container {
     display: flex;
+    align-items: center;
     overflow-x: auto;
     gap: 20px;
     padding: 10px 0;
   }
   
+  .slider {
+    display: flex;
+  }
+
   .recommendation-card {
     flex: 0 0 auto; /* Les éléments ne grandissent pas, ne rétrécissent pas, mais sont basés sur leur largeur */
     width: 160px; /* Définissez une largeur fixe pour chaque carte de recommandation */
@@ -54,7 +133,7 @@
     display: block; /* Élimine l'espace sous les images */
   }
   
-  .recommendation-card h3 {
+  .recommendation-card h4 {
     font-size: 1rem;
     padding: 5px;
     text-align: center;
@@ -69,29 +148,38 @@
     background: #ccc;
     border-radius: 4px;
   }
-  
-  .scroll-container::-webkit-scrollbar-track {
-    background: #efefef;
+
+  .film-details img {
+    max-height: 400px; /* limite la hauteur de l'image pour éviter qu'elle soit trop grande */
+    object-fit: cover; /* assure que l'image couvre la zone définie sans perdre son ratio d'aspect */
+    margin-right: 20px; /* ajoute un peu d'espace entre l'image et le texte à côté */
+
   }
-  
-  @media (min-width: 600px) {
-    .film-card {
-      width: calc(33.333% - 20px);
-    }
-  
-    .film-details img {
-      max-height: 400px; /* limite la hauteur de l'image pour éviter qu'elle soit trop grande */
-      object-fit: cover; /* assure que l'image couvre la zone définie sans perdre son ratio d'aspect */
-      margin-right: 20px; /* ajoute un peu d'espace entre l'image et le texte à côté */
-    }
-  
-    .film-details > * {
-      flex: 1; /* donne une flexibilité égale aux éléments enfants direct de .film-details, permettant un arrangement plus équilibré */
-    }
+
+  .film-details > * {
+    flex: 1; /* donne une flexibilité égale aux éléments enfants direct de .film-details, permettant un arrangement plus équilibré */
   }
+}
   
-  @media (min-width: 900px) {
-    .film-card {
-      width: calc(25% - 20px);
-    }
+@media (min-width: 600px) {
+  .film-card {
+    width: calc(33.333% - 20px);
   }
+
+  #imgCinema {
+    max-height: 400px; /* limite la hauteur de l'image pour éviter qu'elle soit trop grande */
+    object-fit: cover; /* assure que l'image couvre la zone définie sans perdre son ratio d'aspect */
+    margin-right: 20px; /* ajoute un peu d'espace entre l'image et le texte à côté */
+  }
+
+  .film-details > * {
+    flex: 1; /* donne une flexibilité égale aux éléments enfants direct de .film-details, permettant un arrangement plus équilibré */
+  }
+}
+
+@media (min-width: 900px) {
+  .film-card {
+    width: calc(25% - 20px);
+
+  }
+}

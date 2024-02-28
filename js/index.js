@@ -1,8 +1,11 @@
+
 const options = {
     method: 'GET',
     headers: {
         accept: 'application/json',
         Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ZjViOWQ4NTQzODM2OGYxMzg2OTc3MzlkMDY3NmU5MCIsInN1YiI6IjY1ZGI2NDU5ODI2MWVlMDE4NWMyZmE3OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.EqaglO-GjtRSZOQomGgTqN6cuNF7LE1oecefis70Kds'
+
+
     }
 };
 
@@ -14,6 +17,7 @@ function chargementFilm(params) {
         .then((data) => {
             let listeFilm = data.results;
 
+
             let mainList = document.querySelector("main");
 
             listeFilm.forEach(element => {
@@ -21,7 +25,7 @@ function chargementFilm(params) {
                 let titre = element.original_title;
                 let affiche = "https://image.tmdb.org/t/p/w500" + element.poster_path;
                 let dateSortie = element.release_date;
-                let duree = " ATTENTION ";
+
                 let genre = element.genre_ids;
                 let id = element.id;
 
