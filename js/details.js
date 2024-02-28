@@ -25,10 +25,10 @@ window.addEventListener("load", () => {
 function displayMovie(data) {
   let idFilm = data;
 
-  let title = document.querySelector("#movieTitle");
+  let title = document.querySelector("#header");
   let mainDetails = document.querySelector(".movieDescription");
 
-  let movieTitle = document.createElement("h2");
+  let movieTitle = document.createElement("h1");
   movieTitle.innerHTML = idFilm.title;
   title.appendChild(movieTitle);
 
