@@ -1,17 +1,6 @@
-#header h1 {
-  font-size: 3em;
-}
-
-#homeLink {
-  position: absolute;
-  left: 150px;
-  text-decoration: none;
-  color: white;
-  font-size: 1.5em;
-}
-
-.film-details {
-  padding: 20px;
+#header {
+  display: flex;
+  justify-content: center;
 }
 
 .movieDescription {
@@ -19,6 +8,10 @@
   flex-direction: column;
   align-items: center;
   padding: 1.5em 0;
+}
+
+.movieDescription h1 {
+  font-size: 3em;
 }
 
 .movieDescription p {
@@ -47,7 +40,8 @@
   display: flex;
   justify-content: center;
   color: white;
-  background: black;
+  background: #8e3b46;
+  padding: 20px;
 }
 
 .slider {
@@ -57,16 +51,6 @@
   justify-content: center;
   margin: 0.5em;
 }
-
-/* .buttonSlider {
-  background-color: white;
-  border: none;
-  font-size: 1.3em;
-}
-
-.buttonSlider:hover {
-  background-color: lightgray;
-} */
 
 .recommendation-card {
   flex: 0 0 auto; /* Les éléments ne grandissent pas, ne rétrécissent pas, mais sont basés sur leur largeur */
@@ -92,10 +76,6 @@
 }
 
 @media (min-width: 600px) {
-  .film-details {
-    padding: 20px;
-  }
-
   .film-recommendations {
     margin-top: 20px;
   }
