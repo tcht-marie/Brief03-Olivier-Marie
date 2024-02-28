@@ -53,7 +53,7 @@ function chargementFilm(params) {
                 let p2 = document.createElement("p");
                 cardFilm.appendChild(p2);
                 p2.classList.add("movieLength");
-                p2.innerHTML = duree;
+
 
                 let p3 = document.createElement("p");
                 cardFilm.appendChild(p3);
