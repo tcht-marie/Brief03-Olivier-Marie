@@ -40,9 +40,8 @@ GCR Cinéma a besoin d'une nouvelle page web pour afficher les films à l'affich
 - Affichage d'une carte film
 
 - Obtention et Affichage genre
-
-- Filtre des films
   ![code filtre film](./img/code_fetch_filtre_genre_film.png)
+- Filtre des films
 
 ### Page Détails d'un film
 
