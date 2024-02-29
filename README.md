@@ -35,11 +35,19 @@ GCR Cinéma a besoin d'une nouvelle page web pour afficher les films à l'affich
 ### Page Liste des films
 
 - Obtention et Affichage de la liste des films
+  ![code liste film](./img/code_fetch_liste_film.png)
+
 - Affichage d'une carte film
+
 - Obtention et Affichage genre
+
 - Filtre des films
+  ![code filtre film](./img/code_fetch_filtre_genre_film.png)
 
 ### Page Détails d'un film
 
 - Obtention et affichage details sur un film
+  ![code filtre film](./img/code_fetch_recup_id_details_film.png)
+
 - Obtention et affichage recommandation de film
+  ![code filtre film](./img/code_fetch_reco_film.png)

@@ -14,7 +14,7 @@ nav a {
   display: none;
 }
 
-/* ------- Media Queries de la Nav Bar ------- */
+/* ------- Media Queries de la Nav Bar (changement d'affichage et passe en menu burger ------- */
 @media screen and (max-width: 767px) {
   #logoNavBar {
     max-width: 14em;

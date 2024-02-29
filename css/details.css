@@ -6,7 +6,6 @@
 .movieDescription {
   display: flex;
   flex-direction: column;
-
   align-items: center;
   max-width: 800px;
   padding: 1em 0;
@@ -103,7 +102,6 @@
   }
 
   .film-details img {
-    width: auto;
     max-height: 400px; /* limite la hauteur de l'image pour éviter qu'elle soit trop grande */
     margin-right: 20px; /* ajoute un peu d'espace entre l'image et le texte à côté */
   }
@@ -122,6 +120,10 @@
 .movieDetails {
   display: flex;
   flex-direction: row;
+}
+
+.movieDetails img {
+  width: auto;
 }
 
 @media (max-width: 600px) {

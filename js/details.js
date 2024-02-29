@@ -1,3 +1,4 @@
+// options pour fetch
 const options = {
   method: "GET",
   headers: {
@@ -7,6 +8,7 @@ const options = {
   },
 };
 
+// recup de l'id du film choisi pour afficher les détails de ce film
 window.addEventListener("load", () => {
   let url = window.location.href;
   let regexId = /\?(.*)/;
@@ -22,10 +24,12 @@ window.addEventListener("load", () => {
     .catch((err) => console.error(err));
 });
 
+// fonction pour afficher les détails du film
 function displayMovie(data) {
+  // récupération des données du film fournit par l'API
   let idFilm = data;
 
-  //   let title = document.querySelector("#header");
+  // hydratation
   let mainDetails = document.querySelector(".movieDescription");
 
   let movieTitle = document.createElement("h1");
@@ -41,8 +45,7 @@ function displayMovie(data) {
   let movieDescriptionContenu = document.createElement("div");
   movieDescriptionContenu.classList.add("movieDescriptionContenu");
 
-
-
+  // condition pour afficher ou non le poster_path (car pas tous dispos dans l'API)
   if (idFilm.poster_path === null) {
     console.error("Aucuns posters dispos");
   } else {
@@ -51,8 +54,6 @@ function displayMovie(data) {
     movieDetails.appendChild(movieImage);
   }
 
-
-
   let detailsMovie = document.createElement("p");
   detailsMovie.innerHTML = idFilm.overview;
 
@@ -60,14 +61,7 @@ function displayMovie(data) {
 
   movieDetails.appendChild(movieDescriptionContenu);
 
-  // if (idFilm.poster_path === null) {
-  //   console.error("Aucuns posters dispos");
-  // } else {
-  //   let movieImage = document.createElement("img");
-  //   movieImage.src = "https://image.tmdb.org/t/p/w500" + idFilm.poster_path;
-  //   mainDetails.appendChild(movieImage);
-  // }
-
+  // condition pour afficher ou non les genres (car pas tous dispos dans l'API)
   if (idFilm.genres.length === 0) {
     console.error("Aucuns genres trouvés");
   } else {
@@ -104,11 +98,12 @@ function displayMovie(data) {
   }
 }
 
+// fonction pour afficher les recommandations liées à l'id du film
 function displayReco(idOrigin) {
   fetch(
     "https://api.themoviedb.org/3/movie/" +
-    idOrigin +
-    "/recommendations?language=fr-FR&page=1",
+      idOrigin +
+      "/recommendations?language=fr-FR&page=1",
     options
   )
     .then((response) => response.json())
