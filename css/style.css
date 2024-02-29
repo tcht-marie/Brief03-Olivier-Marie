@@ -15,6 +15,7 @@ body {
 
 body h1 {
   text-align: center;
+  font-size: 3em;
 }
 
 header {
@@ -81,8 +82,8 @@ main {
 
 legend {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
   border: 0.2em solid #8e3b46;
   border-radius: 2em;
   padding: 5px;
@@ -111,10 +112,15 @@ input {
 }
 
 .Filtre button {
-  border: 0.2em solid #8e3b46;
+  font-size: 1em;
+  border: 0.15em solid #8e3b46;
   border-radius: 2em;
-  padding: 5px;
+  padding: 6px;
   background: white;
+}
+
+.Filtre button:hover {
+  background: lightgray;
 }
 
 .filtre input {
