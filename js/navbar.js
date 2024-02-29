@@ -16,7 +16,7 @@ window.addEventListener("load", () => {
               <li><a href="index.html">Accueil</a></li>
               <li><a href="">Recherche</a></li>
               <li><a href="">Films populaires</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="">Contact</a></li>
             </ul>
         </div>`;
 });

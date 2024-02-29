@@ -31,6 +31,10 @@
   color: black;
 }
 
+.movieDescriptionContenu p {
+  text-align: justify;
+}
+
 .distribution {
   display: flex;
   flex-wrap: wrap;
