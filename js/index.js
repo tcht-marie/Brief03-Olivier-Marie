@@ -63,7 +63,7 @@ function chargementFilm(params) {
 }
 
 window.addEventListener("load", () => {
-    let filtres = document.querySelector("legend");
+    let filtres = document.querySelector(".legend");
 
     fetch("https://api.themoviedb.org/3/genre/movie/list?language=fr", options)
         .then((response) => response.json())
