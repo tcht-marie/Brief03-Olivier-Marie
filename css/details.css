@@ -10,7 +10,7 @@
   align-items: center;
   max-width: 800px;
   padding: 1em 0;
-  border: 0.2em solid lightgray;
+  border: 0.2em solid #8e3b46;
   border-radius: 2em;
   margin: 30px;
   padding: 30px;
@@ -69,7 +69,7 @@
 .recommendation-card {
   flex: 0 0 auto; /* Les éléments ne grandissent pas, ne rétrécissent pas, mais sont basés sur leur largeur */
   width: 160px; /* Définissez une largeur fixe pour chaque carte de recommandation */
-  border: 1px solid #ddd;
+  border: 1px solid #8e3b46;
   border-radius: 5px;
   height: auto;
   padding: 0.5em;

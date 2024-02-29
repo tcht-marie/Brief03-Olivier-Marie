@@ -139,7 +139,8 @@ input {
   }
 
   legend {
-    border: none;
+    border-left: none;
+    border-right: none;
     border-radius: 0;
   }
 
@@ -149,7 +150,8 @@ input {
 
   .movie {
     width: 100%;
-    border: none;
+    border-left: none;
+    border-right: none;
     border-radius: 0;
   }
 
