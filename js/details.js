@@ -31,18 +31,42 @@ function displayMovie(data) {
   let movieTitle = document.createElement("h1");
   movieTitle.innerHTML = idFilm.title;
 
-  let detailsMovie = document.createElement("p");
-  detailsMovie.innerHTML = idFilm.overview;
+  mainDetails.appendChild(movieTitle);
 
-  mainDetails.append(movieTitle, detailsMovie);
+  let movieDetails = document.createElement("div");
+
+  movieDetails.classList.add("movieDetails");
+  mainDetails.appendChild(movieDetails);
+
+  let movieDescriptionContenu = document.createElement("div");
+  movieDescriptionContenu.classList.add("movieDescriptionContenu");
+
+
 
   if (idFilm.poster_path === null) {
     console.error("Aucuns posters dispos");
   } else {
     let movieImage = document.createElement("img");
     movieImage.src = "https://image.tmdb.org/t/p/w500" + idFilm.poster_path;
-    mainDetails.appendChild(movieImage);
+    movieDetails.appendChild(movieImage);
   }
+
+
+
+  let detailsMovie = document.createElement("p");
+  detailsMovie.innerHTML = idFilm.overview;
+
+  movieDescriptionContenu.append(detailsMovie);
+
+  movieDetails.appendChild(movieDescriptionContenu);
+
+  // if (idFilm.poster_path === null) {
+  //   console.error("Aucuns posters dispos");
+  // } else {
+  //   let movieImage = document.createElement("img");
+  //   movieImage.src = "https://image.tmdb.org/t/p/w500" + idFilm.poster_path;
+  //   mainDetails.appendChild(movieImage);
+  // }
 
   if (idFilm.genres.length === 0) {
     console.error("Aucuns genres trouvés");
@@ -50,7 +74,7 @@ function displayMovie(data) {
     let distribution = document.createElement("p");
     distribution.textContent = "Genre : ";
     distribution.classList.add("distribution");
-    mainDetails.appendChild(distribution);
+    movieDescriptionContenu.appendChild(distribution);
     for (let index = 0; index < idFilm.genres.length; index++) {
       const element = idFilm.genres[index].name;
       let genre = document.createElement("p");
@@ -68,7 +92,7 @@ function displayMovie(data) {
   let budget = document.createElement("p");
   budget.innerHTML = "Budget du film : " + data.budget + " $";
 
-  mainDetails.append(releaseDate, duration, budget);
+  movieDescriptionContenu.append(releaseDate, duration, budget);
 
   if (idFilm.homepage === "") {
     console.warn("aucun site lié à ce film");
@@ -76,15 +100,15 @@ function displayMovie(data) {
     let homePage = document.createElement("a");
     homePage.href = data.homepage;
     homePage.innerHTML = homePage.href;
-    mainDetails.appendChild(homePage);
+    movieDescriptionContenu.appendChild(homePage);
   }
 }
 
 function displayReco(idOrigin) {
   fetch(
     "https://api.themoviedb.org/3/movie/" +
-      idOrigin +
-      "/recommendations?language=fr-FR&page=1",
+    idOrigin +
+    "/recommendations?language=fr-FR&page=1",
     options
   )
     .then((response) => response.json())

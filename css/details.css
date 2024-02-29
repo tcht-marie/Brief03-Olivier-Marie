@@ -6,12 +6,20 @@
 .movieDescription {
   display: flex;
   flex-direction: column;
+
   align-items: center;
-  padding: 1.5em 0;
+  max-width: 800px;
+  padding: 1em 0;
+  border: 0.2em solid lightgray;
+  border-radius: 2em;
+  margin: 30px;
+  padding: 30px;
+  background-color: white;
 }
 
 .movieDescription h1 {
   font-size: 3em;
+  padding-bottom: 30px;
 }
 
 .movieDescription p {
@@ -34,6 +42,7 @@
 
 .film-recommendations {
   margin-top: 20px;
+  width: 100%;
 }
 
 .film-recommendations h2 {
@@ -61,6 +70,7 @@
   padding: 0.5em;
   margin: 0.3em;
   text-align: center;
+  background-color: white;
 }
 
 .recommendation-card img {
@@ -75,6 +85,12 @@
   text-align: center;
 }
 
+.film-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 @media (min-width: 600px) {
   .film-recommendations {
     margin-top: 20px;
@@ -82,7 +98,7 @@
 
   .film-details img {
     max-height: 400px; /* limite la hauteur de l'image pour éviter qu'elle soit trop grande */
-    object-fit: cover; /* assure que l'image couvre la zone définie sans perdre son ratio d'aspect */
+    /* object-fit: cover; assure que l'image couvre la zone définie sans perdre son ratio d'aspect */
     margin-right: 20px; /* ajoute un peu d'espace entre l'image et le texte à côté */
   }
 
@@ -95,4 +111,27 @@
   .film-details > * {
     flex: 1; /*donne une flexibilité égale aux éléments enfants direct de .film-details, permettant un arrangement plus équilibré */
   }
+}
+
+.movieDetails {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 600px) {
+  .movieDetails {
+    flex-direction: column;
+  }
+
+  .movieDescription {
+    border-radius: 0;
+    margin: 0;
+    border: none;
+    background-color: white;
+  }
+}
+
+img {
+  width: 100%;
+  padding-bottom: 15px;
 }
