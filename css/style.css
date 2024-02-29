@@ -37,19 +37,7 @@ main {
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
-  justify-content: space-between;
-}
-
-@media (max-width: 677px) {
-  .film-grid {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 1000px) {
-  .film-grid {
-    justify-content: space-around;
-  }
+  justify-content: center;
 }
 
 .movie {
@@ -67,6 +55,7 @@ main {
   height: 2.7em;
   font-size: 1.3em;
   text-align: center;
+  padding: 0 0.5em;
 }
 
 .movieImg {
@@ -129,4 +118,43 @@ input {
 
 #filtres {
   padding: 20px;
+}
+
+/* MEDIA QUERIES */
+/* @media screen and (max-width: 1619px) {
+  .movie {
+    width: auto;
+  }
+} */
+
+@media (max-width: 677px) {
+  .film-grid {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 659px) {
+  #filtres {
+    padding: 20px 0;
+  }
+
+  legend {
+    border: none;
+    border-radius: 0;
+  }
+
+  .film-grid {
+    padding: 0;
+  }
+
+  .movie {
+    width: 100%;
+    border: none;
+    border-radius: 0;
+  }
+
+  .movieImg {
+    width: 100%;
+    height: auto;
+  }
 }
